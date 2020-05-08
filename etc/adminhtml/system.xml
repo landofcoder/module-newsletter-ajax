@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * https://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_NewsletterAjax
+ * @copyright  Copyright (c) 2020 Landofcoder (https://www.landofcoder.com/)
+ * @license    https://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="landofcoder" translate="label" sortOrder="50">
+            <label>Landofcoder Extensions</label>
+        </tab>
+        <section id="newsletterajax" translate="label" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50">
+            <class>separator-top</class>
+            <label>Newsletter Ajax</label>
+            <tab>landofcoder</tab>
+            <resource>Lof_NewsletterAjax::config</resource>
+            <group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50">
+                <label>General Configuration</label>
+                <comment>
+                    Enabling the Newsletter Ajax option will change the default footer subscription field to use AJAX instead of reloading the page.
+                </comment>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" canRestore="1" >
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="thanksyou_text" translate="label" type="textarea" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" canRestore="1" >
+                    <label>Thanks you Text</label>
+                </field>
+                <field id="confirm_text" translate="label" type="textarea" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" canRestore="1" >
+                    <label>Confirm Newsletter Subscription Text</label>
+                </field>
+                <field id="is_subscribed_text" translate="label" type="textarea" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" canRestore="1" >
+                    <label>Email Address is Subscribed Text</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

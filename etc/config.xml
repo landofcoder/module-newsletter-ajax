@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * https://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_NewsletterAjax
+ * @copyright  Copyright (c) 2020 Landofcoder (https://www.landofcoder.com/)
+ * @license    https://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <newsletterajax>
+            <general>
+                <enable>0</enable>
+                <thanksyou_text>Thank you for your subscription.</thanksyou_text>
+                <confirm_text>The confirmation request has been sent.</confirm_text>
+                <is_subscribed_text>This email address is already subscribed.</is_subscribed_text>
+            </general>
+        </newsletterajax>
+    </default>
+</config>

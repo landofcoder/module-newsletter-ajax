@@ -1,0 +1,30 @@
+{
+  "name": "landofcoder/module-newsletter-ajax",
+  "description": "This module support ajax newsletter subscription",
+  "require": {},
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "MIT"
+  ],
+  "keywords": [
+      "landofcoder",
+      "landofcoder newsletter ajax",
+      "magento 2 newsletter ajax extension"
+  ],
+  "authors": [
+      {
+          "name": "Lof",
+          "email": "landofcoder@gmail.com",
+          "role": "Magento 2 Lof Newsletter Ajax"
+      }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Lof\\NewsletterAjax\\": ""
+    }
+  }
+}
