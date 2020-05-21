@@ -1,18 +1,18 @@
 <?php
 /**
  * Landofcoder
- * 
+ *
  * NOTICE OF LICENSE
- * 
+ *
  * This source file is subject to the Landofcoder.com license that is
  * available through the world-wide-web at this URL:
  * https://landofcoder.com/license
- * 
+ *
  * DISCLAIMER
- * 
+ *
  * Do not edit or add to this file if you wish to upgrade this extension to newer
  * version in the future.
- * 
+ *
  * @category   Landofcoder
  * @package    Lof_NewsletterAjax
  * @copyright  Copyright (c) 2020 Landofcoder (https://www.landofcoder.com/)
@@ -31,6 +31,7 @@ use Magento\Framework\Message\Manager;
 use Magento\Newsletter\Model\SubscriberFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Lof\NewsletterAjax\Helper\Data;
+
 /**
  * Class NewAction
  *
@@ -42,10 +43,12 @@ class NewAction extends \Magento\Newsletter\Controller\Subscriber\NewAction
      * @var RequestInterface
      */
     protected $request;
+
     /**
      * @var JsonFactory
      */
     protected $jsonFactory;
+
     /**
      * @var Manager
      */
@@ -106,7 +109,7 @@ class NewAction extends \Magento\Newsletter\Controller\Subscriber\NewAction
     public function aroundExecute(\Magento\Newsletter\Controller\Subscriber\NewAction $subject, callable $proceed)
     {
         $is_enabled = $this->helperData->getGeneralConfig("enable");
-        if($is_enabled){
+        if ($is_enabled) {
             $isAjax = $this->request->isXmlHttpRequest();
 
             if ($isAjax) {
@@ -131,9 +134,9 @@ class NewAction extends \Magento\Newsletter\Controller\Subscriber\NewAction
         $thanksyou_text = $this->helperData->getGeneralConfig("thanksyou_text");
         $confirm_text = $this->helperData->getGeneralConfig("confirm_text");
 
-        $subscribed_text = $subscribed_text?$subscribed_text:__('This email address is already subscribed.');
-        $thanksyou_text = $thanksyou_text?$thanksyou_text:__('Thank you for your subscription.');
-        $confirm_text = $confirm_text?$confirm_text:__('The confirmation request has been sent.');
+        $subscribed_text = $subscribed_text ? $subscribed_text : __('This email address is already subscribed.');
+        $thanksyou_text = $thanksyou_text ? $thanksyou_text : __('Thank you for your subscription.');
+        $confirm_text = $confirm_text ? $confirm_text : __('The confirmation request has been sent.');
 
         try {
             $this->validateEmailFormat($email);
@@ -142,7 +145,7 @@ class NewAction extends \Magento\Newsletter\Controller\Subscriber\NewAction
 
             $subscriber = $this->_subscriberFactory->create()->loadByEmail($email);
             if ($subscriber->getId()
-                && $subscriber->getSubscriberStatus() == \Magento\Newsletter\Model\Subscriber::STATUS_SUBSCRIBED
+                    && $subscriber->getSubscriberStatus() == \Magento\Newsletter\Model\Subscriber::STATUS_SUBSCRIBED
             ) {
                 $jsonData = [
                     'status' => 'error',
